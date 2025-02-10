@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-export const Form1 = () => {
+export const Form2 = () => {
   const [name, setname] = useState("");
-  const [email, setemail] = useState("");
+  const [productname, setproductname] = useState("");
   const [phone, setphone] = useState("");
-  const [address, setaddress] = useState("");
-  const [gender, setgender] = useState("");
+  const [city, setcity] = useState("");
+  const [state, setstate] = useState("");
   return (
     <div style={{ textAlign: "center" }}>
-      <h1>Id card information form</h1>
+      <h1>Product Information Form</h1>
       <div style={{ margin: "10px" }}>
         <label>Name:</label>
         <input
@@ -21,15 +21,15 @@ export const Form1 = () => {
         {name}
       </div>
       <div style={{ margin: "10px" }}>
-        <label>Email:</label>
+        <label>Product Name:</label>
         <input
-          type="email"
-          placeholder="enter email"
+          type="text"
+          placeholder="enter product name"
           onChange={(event) => {
-            setemail(event.target.value);
+            setproductname(event.target.value);
           }}
         />
-        {email}
+        {productname}
       </div>
       <div style={{ margin: "10px" }}>
         <label>Phone No.:</label>
@@ -43,26 +43,26 @@ export const Form1 = () => {
         {phone}
       </div>
       <div style={{ margin: "10px" }}>
-        <label>Address:</label>
+        <label>City:</label>
         <input
           type="text"
-          placeholder="enter address"
+          placeholder="enter city"
           onChange={(event) => {
-            setaddress(event.target.value);
+            setcity(event.target.value);
           }}
         />
-        {address}
+        {city}
       </div>
       <div style={{ margin: "10px" }}>
-        <label>Gender</label>
+        <label>State</label>
         <input
           type="text"
-          placeholder="enter gender"
+          placeholder="enter state"
           onChange={(event) => {
-            setgender(event.target.value);
+            setstate(event.target.value);
           }}
         />
-        {gender}
+        {state}
       </div>
     </div>
   );

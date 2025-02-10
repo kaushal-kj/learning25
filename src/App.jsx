@@ -17,6 +17,7 @@ import { UseStateDemo1 } from "./components/UseStateDemo1";
 import { UseStateDemo2 } from "./components/UseStateDemo2";
 import { InputDemo1 } from "./components/InputDemo1";
 import { Form1 } from "./components/Form1";
+import { Form2 } from "./components/Form2";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -33,6 +34,7 @@ function App() {
       {/* <UseStateDemo2></UseStateDemo2> */}
       {/* <InputDemo1></InputDemo1> */}
       <Form1></Form1>
+      <Form2></Form2>
       {/* <Navbar></Navbar>
       <About></About> */}
       {/* <Header></Header>
