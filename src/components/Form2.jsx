@@ -17,7 +17,7 @@ export const Form2 = () => {
           onChange={(event) => {
             setname(event.target.value);
           }}
-        />
+        ></input>
         {name}
       </div>
       <div style={{ margin: "10px" }}>
@@ -28,7 +28,7 @@ export const Form2 = () => {
           onChange={(event) => {
             setproductname(event.target.value);
           }}
-        />
+        ></input>
         {productname}
       </div>
       <div style={{ margin: "10px" }}>
@@ -39,7 +39,7 @@ export const Form2 = () => {
           onChange={(event) => {
             setphone(event.target.value);
           }}
-        />
+        ></input>
         {phone}
       </div>
       <div style={{ margin: "10px" }}>
@@ -50,7 +50,7 @@ export const Form2 = () => {
           onChange={(event) => {
             setcity(event.target.value);
           }}
-        />
+        ></input>
         {city}
       </div>
       <div style={{ margin: "10px" }}>
@@ -61,7 +61,7 @@ export const Form2 = () => {
           onChange={(event) => {
             setstate(event.target.value);
           }}
-        />
+        ></input>
         {state}
       </div>
     </div>

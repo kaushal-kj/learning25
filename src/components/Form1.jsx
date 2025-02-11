@@ -17,7 +17,7 @@ export const Form1 = () => {
           onChange={(event) => {
             setname(event.target.value);
           }}
-        />
+        ></input>
         {name}
       </div>
       <div style={{ margin: "10px" }}>
@@ -28,7 +28,7 @@ export const Form1 = () => {
           onChange={(event) => {
             setemail(event.target.value);
           }}
-        />
+        ></input>
         {email}
       </div>
       <div style={{ margin: "10px" }}>
@@ -39,7 +39,7 @@ export const Form1 = () => {
           onChange={(event) => {
             setphone(event.target.value);
           }}
-        />
+        ></input>
         {phone}
       </div>
       <div style={{ margin: "10px" }}>
@@ -50,7 +50,7 @@ export const Form1 = () => {
           onChange={(event) => {
             setaddress(event.target.value);
           }}
-        />
+        ></input>
         {address}
       </div>
       <div style={{ margin: "10px" }}>
@@ -61,7 +61,7 @@ export const Form1 = () => {
           onChange={(event) => {
             setgender(event.target.value);
           }}
-        />
+        ></input>
         {gender}
       </div>
     </div>
