@@ -34,22 +34,42 @@ export const Navbar = () => {
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/formdemo1">
-                FormDemo1
+                Sample-Form
               </Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/formdemo2">
-                FormDemo2
+                Goa-Form
               </Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/formdemo3">
-                FormDemo3
+                Prayagraj-Form
               </Link>
             </li>
             <li class="nav-item">
               <Link class="nav-link" to="/formdemo4">
-                FormDemo4
+                Food-Form
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/formdemo5">
+                Booking-Form
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/formdemo6">
+                Product-Form
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/formdemo7">
+                Membership-Form
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/formdemo8">
+                Student-Form
               </Link>
             </li>
           </ul>

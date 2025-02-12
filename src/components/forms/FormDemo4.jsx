@@ -10,7 +10,7 @@ export const FormDemo4 = () => {
     <div style={{ textAlign: "center" }}>
       <h1>Food Form</h1>
       <form onSubmit={handleSubmit(submitHandler)}>
-        <div>
+        <div style={{margin:"10px"}}>
           <label>Name</label>
           <input
             type="text"
@@ -18,7 +18,7 @@ export const FormDemo4 = () => {
             {...register("name")}
           ></input>
         </div>
-        <div>
+        <div style={{margin:"10px"}}>
           <label>Toppings</label>
           <br />
           Cheeze
@@ -28,7 +28,7 @@ export const FormDemo4 = () => {
           Oragano
           <input type="radio" name="topping" {...register("topping")}></input>
         </div>
-        <div>
+        <div style={{margin:"10px"}}>
           <label>gender</label>
           <input
             type="text"
@@ -36,7 +36,7 @@ export const FormDemo4 = () => {
             {...register("gender")}
           ></input>
         </div>
-        <div>
+        <div style={{margin:"10px"}}>
           <input type="submit" value="submit" />
         </div>
       </form>

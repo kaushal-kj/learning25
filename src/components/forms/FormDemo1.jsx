@@ -10,7 +10,7 @@ export const FormDemo1 = () => {
     <div style={{ textAlign: "center" }}>
       <h1>Sample Form</h1>
       <form onSubmit={handleSubmit(submitHandler)}>
-        <div>
+        <div style={{margin:"10px"}}>
           <label>Name</label>
           <input
             type="text"
@@ -18,7 +18,7 @@ export const FormDemo1 = () => {
             {...register("name")}
           ></input>
         </div>
-        <div>
+        <div style={{margin:"10px"}}>
           <label>Age</label>
           <input
             type="number"
@@ -26,7 +26,7 @@ export const FormDemo1 = () => {
             {...register("age")}
           ></input>
         </div>
-        <div>
+        <div style={{margin:"10px"}}>
           <label>gender</label>
           <input
             type="text"
@@ -34,7 +34,7 @@ export const FormDemo1 = () => {
             {...register("gender")}
           ></input>
         </div>
-        <div>
+        <div style={{margin:"10px"}}>
           <input type="submit" value="submit" />
         </div>
       </form>

@@ -10,7 +10,7 @@ export const FormDemo3 = () => {
     <div style={{ textAlign: "center" }}>
       <h1>Prayagraj Trip</h1>
       <form onSubmit={handleSubmit(submitHandler)}>
-        <div>
+        <div style={{margin:"10px"}}>
           <label>Name</label>
           <input
             type="text"
@@ -18,7 +18,7 @@ export const FormDemo3 = () => {
             {...register("name")}
           ></input>
         </div>
-        <div>
+        <div style={{margin:"10px"}}>
           <label>Transport</label>
           <br />
           Bus:{" "}
@@ -40,7 +40,7 @@ export const FormDemo3 = () => {
             {...register("transport")}
           ></input>
         </div>
-        <div>
+        <div style={{margin:"10px"}}>
           <label>gender</label>
           <input
             type="text"
@@ -48,14 +48,14 @@ export const FormDemo3 = () => {
             {...register("gender")}
           ></input>
         </div>
-        <div>
+        <div style={{margin:"10px"}}>
           <label>Preference:</label>
           <br />
           20km <input type="checkbox" {...register("check")}></input>
           swimming <input type="checkbox" {...register("check")}></input>
           return <input type="checkbox" {...register("check")}></input>
         </div>
-        <div>
+        <div style={{margin:"10px"}}>
           <label>City:</label>
           <select name="Enter City" {...register("city")}>
             <option value="ahmedabad">Ahmedabad</option>
@@ -63,7 +63,7 @@ export const FormDemo3 = () => {
             <option value="goa">Goa</option>
           </select>
         </div>
-        <div>
+        <div style={{margin:"10px"}}>
           <input type="submit" value="submit" />
         </div>
       </form>
