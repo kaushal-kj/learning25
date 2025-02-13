@@ -5,7 +5,6 @@ export const FormDemo8 = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     console.log("error", errors);
     const submitHandler = (data) => {
-        alert("form submitted");
         console.log(data);
     }
     const validationSchema = {
@@ -53,6 +52,22 @@ export const FormDemo8 = () => {
                 value: /[6-9]{1}[0-9]{9}/,
                 message: "not valid number"
             }
+        },
+        usernameValidator: {
+            required: {
+                value: true,
+                message: "username required*"
+            }
+        },
+        passwordValidator: {
+            required: {
+                value: true,
+                message: "password required*"
+            },
+            pattern: {
+                value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/,
+                message: "must contain 8 letters,1 capital,1 special character,1 number"
+            }
         }
     }
 
@@ -99,11 +114,13 @@ export const FormDemo8 = () => {
                 </div>
                 <div style={{ margin: "10px" }}>
                     <label>Username:</label>
-                    <input type="text" name="username" {...register("username")}></input>
+                    <input type="text" name="username" {...register("username", validationSchema.usernameValidator)}></input>
+                    <span style={{ color: "red" }}>{errors.username?.message}</span>
                 </div>
                 <div style={{ margin: "10px" }}>
                     <label>password:</label>
-                    <input type="password" name="password" {...register("password")}></input>
+                    <input type="password" name="password" {...register("password", validationSchema.passwordValidator)}></input>
+                    <span style={{ color: "red" }}>{errors.password?.message}</span>
                 </div>
                 <button type='submit'>Save Profile</button>
             </form>
