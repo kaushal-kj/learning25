@@ -2,21 +2,83 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 
 export const FormDemo8 = () => {
-    const { register, handleSubmit } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    console.log("error", errors);
     const submitHandler = (data) => {
+        alert("form submitted");
         console.log(data);
     }
+    const validationSchema = {
+        nameValidator: {
+            required: {
+                value: true,
+                message: "name required*"
+            }
+        },
+        emailValidator: {
+            required: {
+                value: true,
+                message: "email required*"
+            },
+            minLength: {
+                value: 5,
+                message: "min length is 5"
+            },
+            maxLength: {
+                value: 15,
+                message: "max length is 15"
+            }
+        },
+        ageValidator: {
+            required: {
+                value: true,
+                message: "age is required*"
+            },
+            min: {
+                value: 18,
+                message: "min age is 18"
+            },
+            max: {
+                value: 60,
+                message: "max age is 60"
+            }
+        },
+        contactValidator: {
+            required: {
+                value: true,
+                message: "contact required"
+            },
+            pattern: {
+                //regex
+                value: /[6-9]{1}[0-9]{9}/,
+                message: "not valid number"
+            }
+        }
+    }
+
     return (
         <div style={{ textAlign: "center" }}>
             <h1>Student Form</h1>
             <form onSubmit={handleSubmit(submitHandler)}>
                 <div style={{ margin: "10px" }}>
                     <label>Name:</label>
-                    <input type="text" name="name" {...register("name")}></input>
+                    <input type="text" name="name" {...register("name", validationSchema.nameValidator)}></input>
+                    <span style={{ color: "red" }}>{errors.name?.message}</span>
                 </div>
                 <div style={{ margin: "10px" }}>
                     <label>Email:</label>
-                    <input type="email" name="email" {...register("email")}></input>
+                    <input type="email" name="email" {...register("email", validationSchema.emailValidator)}></input>
+                    <span style={{ color: "red" }}>{errors.email?.message}</span>
+                </div>
+                <div style={{ margin: "10px" }}>
+                    <label > Age:</label>
+                    <input type="number" name='age' {...register("age", validationSchema.ageValidator)}></input>
+                    <span style={{ color: "red" }}>{errors.age?.message}</span>
+                </div>
+                <div style={{ margin: "10px" }}>
+                    <label > contact:</label>
+                    <input type="number" name='contact' {...register("contact", validationSchema.contactValidator)}></input>
+                    <span style={{ color: "red" }}>{errors.contact?.message}</span>
                 </div>
                 <div style={{ margin: "10px" }}>
                     <label>Date of Birth:</label>
