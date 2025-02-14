@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 export const FormDemo8 = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     console.log("error", errors);
+    const [output, setOutput] = useState();
+    const [isSubmitted, setisSubmitted] = useState(false);
+
     const submitHandler = (data) => {
         console.log(data);
+        setOutput(data);
+        setisSubmitted(true);
     }
     const validationSchema = {
         nameValidator: {
@@ -24,7 +29,7 @@ export const FormDemo8 = () => {
                 message: "min length is 5"
             },
             maxLength: {
-                value: 15,
+                value: 60,
                 message: "max length is 15"
             }
         },
@@ -67,6 +72,15 @@ export const FormDemo8 = () => {
             pattern: {
                 value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/,
                 message: "must contain 8 letters,1 capital,1 special character,1 number"
+            }
+        },
+        refcodeValidator: {
+            required: {
+                value: true,
+                message: "ref code required*"
+            },
+            validate: (value) => {
+                return value == "royal" || "must be royal"
             }
         }
     }
@@ -122,7 +136,24 @@ export const FormDemo8 = () => {
                     <input type="password" name="password" {...register("password", validationSchema.passwordValidator)}></input>
                     <span style={{ color: "red" }}>{errors.password?.message}</span>
                 </div>
+                <div style={{ margin: "10px" }}>
+                    <label>Ref Code:</label>
+                    <input type="text" name="ref" {...register("ref", validationSchema.refcodeValidator)}></input>
+                    <span style={{ color: "red" }}>{errors.ref?.message}</span>
+                </div>
+                <div>
+                    <label>Color:</label>
+                    <input type="color" {...register("color")}></input>
+                </div>
                 <button type='submit'>Save Profile</button>
+                {
+                    isSubmitted == true ? <div style={{ color: output.color }}>
+                        <h1> {output?.name}</h1>
+                        <h2>{output?.email}</h2>
+                        <h2>{output?.age}</h2>
+                        <h2>{output?.contact}</h2>
+                    </div> : ""
+                }
             </form>
         </div>
     )
