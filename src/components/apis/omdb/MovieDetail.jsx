@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "../../../assets/style.css";
 import star from "../../../assets/star.png";
@@ -9,21 +9,37 @@ import flame from "../../../assets/flame.png";
 export const MovieDetail = () => {
   const id = useParams().id;
 
-  const [movie, setmovie] = useState(() => {
-    const getMovieDetail = async () => {
-      try {
-        const res = await axios.get(
-          `http://www.omdbapi.com/?apikey=afcad37a&i=${id}`
-        );
-        console.log(res.data);
-        setmovie(res.data);
-      } catch (error) {
-        console.error("error fetching movie", error);
-      }
-    };
+  const [movie, setmovie] = useState({});
+  const getMovieDetail = async () => {
+    try {
+      const res = await axios.get(
+        `http://www.omdbapi.com/?apikey=afcad37a&i=${id}`
+      );
+      console.log(res.data);
+      setmovie(res.data);
+    } catch (error) {
+      console.error("error fetching movie", error);
+    }
+  };
+  useEffect(() => {
     getMovieDetail();
-    return {};
-  });
+  }, []);
+
+  // const [movie, setmovie] = useState(() => {
+  //   const getMovieDetail = async () => {
+  //     try {
+  //       const res = await axios.get(
+  //         `http://www.omdbapi.com/?apikey=afcad37a&i=${id}`
+  //       );
+  //       console.log(res.data);
+  //       setmovie(res.data);
+  //     } catch (error) {
+  //       console.error("error fetching movie", error);
+  //     }
+  //   };
+  //   getMovieDetail();
+  //   return {};
+  // });
 
   return (
     <>

@@ -19,6 +19,9 @@ import { FormDemo8 } from "./components/forms/FormDemo8";
 import { ApiDemo1 } from "./components/apis/ApiDemo1";
 import { SearchMovie } from "./components/apis/omdb/SearchMovie";
 import { MovieDetail } from "./components/apis/omdb/MovieDetail";
+import { ApiDemo2 } from "./components/apis/ApiDemo2";
+import { ApiDemo3 } from "./components/apis/ApiDemo3";
+import { UseEffectDemo } from "./components/UseEffectDemo";
 // import './App.css'
 
 function App() {
@@ -44,6 +47,9 @@ function App() {
         <Route path="/apidemo1" element={<ApiDemo1 />}></Route>
         <Route path="/searchmovie" element={<SearchMovie />}></Route>
         <Route path="/moviedetail/:id" element={<MovieDetail />}></Route>
+        <Route path="/apidemo2" element={<ApiDemo2 />}></Route>
+        <Route path="/apidemo3" element={<ApiDemo3 />}></Route>
+        <Route path="/useeffect1" element={<UseEffectDemo />}></Route>
       </Routes>
     </div>
   );
