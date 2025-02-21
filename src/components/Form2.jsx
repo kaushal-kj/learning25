@@ -7,7 +7,7 @@ export const Form2 = () => {
   const [city, setcity] = useState("");
   const [state, setstate] = useState("");
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center", color: "white" }}>
       <h1>Product Information Form</h1>
       <div style={{ margin: "10px" }}>
         <label>Name:</label>
@@ -18,7 +18,7 @@ export const Form2 = () => {
             setname(event.target.value);
           }}
         ></input>
-        {name}
+        <p>{name}</p>
       </div>
       <div style={{ margin: "10px" }}>
         <label>Product Name:</label>
@@ -29,7 +29,7 @@ export const Form2 = () => {
             setproductname(event.target.value);
           }}
         ></input>
-        {productname}
+        <p>{productname}</p>
       </div>
       <div style={{ margin: "10px" }}>
         <label>Phone No.:</label>
@@ -40,7 +40,7 @@ export const Form2 = () => {
             setphone(event.target.value);
           }}
         ></input>
-        {phone}
+        <p>{phone}</p>
       </div>
       <div style={{ margin: "10px" }}>
         <label>City:</label>
@@ -51,7 +51,7 @@ export const Form2 = () => {
             setcity(event.target.value);
           }}
         ></input>
-        {city}
+        <p>{city}</p>
       </div>
       <div style={{ margin: "10px" }}>
         <label>State</label>
@@ -62,7 +62,7 @@ export const Form2 = () => {
             setstate(event.target.value);
           }}
         ></input>
-        {state}
+        <p>{state}</p>
       </div>
     </div>
   );

@@ -8,7 +8,7 @@ export const InputDemo1 = () => {
     setname(event.target.value);
   };
   return (
-    <div>
+    <div style={{ color: "white", textAlign: "center" }}>
       <h1>INPUT DEMO 1</h1>
       <div>
         <label>Name:</label>
@@ -19,7 +19,7 @@ export const InputDemo1 = () => {
             eventHandler(event);
           }}
         />
-        {name}
+        <p>{name}</p>
       </div>
       <div>
         <label>Email:</label>
@@ -28,7 +28,7 @@ export const InputDemo1 = () => {
           placeholder="Enter your email"
           onChange={(event) => setemail(event.target.value)}
         />
-        {email}
+        <p>{email}</p>
       </div>
     </div>
   );

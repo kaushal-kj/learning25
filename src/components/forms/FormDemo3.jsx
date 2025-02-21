@@ -2,19 +2,23 @@ import React from "react";
 import { useForm } from "react-hook-form";
 
 export const FormDemo3 = () => {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   console.log("errors", errors);
   const submitHandler = (data) => {
     console.log(data);
-  }
+  };
   const validationSchema = {
     nameValidator: {
       required: {
         value: true,
-        message: "name required*"
-      }
-    }
-  }
+        message: "name required*",
+      },
+    },
+  };
   return (
     <div style={{ textAlign: "center" }}>
       <h1>Prayagraj Trip</h1>

@@ -31,13 +31,9 @@ export const FormDemo8 = () => {
         value: true,
         message: "email required*",
       },
-      minLength: {
-        value: 5,
-        message: "min length is 5",
-      },
-      maxLength: {
-        value: 60,
-        message: "max length is 15",
+      pattern: {
+        value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        message: "Invalid email format",
       },
     },
     ageValidator: {
@@ -77,9 +73,10 @@ export const FormDemo8 = () => {
         message: "password required*",
       },
       pattern: {
-        value: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/,
+        value:
+          /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
         message:
-          "must contain 8 letters,1 capital,1 special character,1 number",
+          "Password must be at least 8 characters long, contain an uppercase letter, a lowercase letter, a number, and a special character",
       },
     },
     refcodeValidator: {
@@ -94,7 +91,7 @@ export const FormDemo8 = () => {
   };
   // html contents under return tag
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center", color: "white" }}>
       <h1>Student Form</h1>
       {/* form creation */}
       <form onSubmit={handleSubmit(submitHandler)}>
@@ -105,7 +102,9 @@ export const FormDemo8 = () => {
             name="name"
             {...register("name", validationSchema.nameValidator)}
           ></input>
-          <span style={{ color: "red" }}>{errors.name?.message}</span>
+          <span style={{ color: "red" }}>
+            <p>{errors.name?.message}</p>
+          </span>
         </div>
         <div style={{ margin: "10px" }}>
           <label>Email:</label>
@@ -114,7 +113,9 @@ export const FormDemo8 = () => {
             name="email"
             {...register("email", validationSchema.emailValidator)}
           ></input>
-          <span style={{ color: "red" }}>{errors.email?.message}</span>
+          <span style={{ color: "red" }}>
+            <p>{errors.email?.message}</p>
+          </span>
         </div>
         <div style={{ margin: "10px" }}>
           <label> Age:</label>
@@ -123,7 +124,9 @@ export const FormDemo8 = () => {
             name="age"
             {...register("age", validationSchema.ageValidator)}
           ></input>
-          <span style={{ color: "red" }}>{errors.age?.message}</span>
+          <span style={{ color: "red" }}>
+            <p>{errors.age?.message}</p>
+          </span>
         </div>
         <div style={{ margin: "10px" }}>
           <label> contact:</label>
@@ -132,7 +135,9 @@ export const FormDemo8 = () => {
             name="contact"
             {...register("contact", validationSchema.contactValidator)}
           ></input>
-          <span style={{ color: "red" }}>{errors.contact?.message}</span>
+          <span style={{ color: "red" }}>
+            <p>{errors.contact?.message}</p>
+          </span>
         </div>
         <div style={{ margin: "10px" }}>
           <label>Date of Birth:</label>
@@ -200,7 +205,9 @@ export const FormDemo8 = () => {
             name="username"
             {...register("username", validationSchema.usernameValidator)}
           ></input>
-          <span style={{ color: "red" }}>{errors.username?.message}</span>
+          <span style={{ color: "red" }}>
+            <p>{errors.username?.message}</p>
+          </span>
         </div>
         <div style={{ margin: "10px" }}>
           <label>password:</label>
@@ -209,9 +216,11 @@ export const FormDemo8 = () => {
             name="password"
             {...register("password", validationSchema.passwordValidator)}
           ></input>
-          <span style={{ color: "red" }}>{errors.password?.message}</span>
+          <span style={{ color: "red" }}>
+            <p>{errors.password?.message}</p>
+          </span>
         </div>
-        <div style={{ margin: "10px" }}>
+        {/* <div style={{ margin: "10px" }}>
           <label>Ref Code:</label>
           <input
             type="text"
@@ -219,7 +228,7 @@ export const FormDemo8 = () => {
             {...register("ref", validationSchema.refcodeValidator)}
           ></input>
           <span style={{ color: "red" }}>{errors.ref?.message}</span>
-        </div>
+        </div> */}
         <div>
           <label>Color:</label>
           <input type="color" {...register("color")}></input>
